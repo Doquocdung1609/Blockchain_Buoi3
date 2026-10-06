@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { color-scheme: dark; }
+  body {
+    margin: 0;
+    min-width: 320px;
+    background:
+      radial-gradient(circle at 10% -10%, rgba(55, 213, 255, 0.12), transparent 32rem),
+      radial-gradient(circle at 90% 10%, rgba(139, 124, 255, 0.10), transparent 28rem),
+      #07111f;
+    font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  code, .font-mono { font-family: "Space Mono", ui-monospace, monospace; }
+  button:disabled { cursor: not-allowed; opacity: 0.45; }
+}
+
+@layer components {
+  .card { @apply rounded-2xl border border-line bg-panel/90 shadow-glow backdrop-blur; }
+  .eyebrow { @apply text-[11px] font-bold uppercase tracking-[0.24em] text-electric; }
+  .label { @apply text-xs font-semibold uppercase tracking-wider text-slate-400; }
+  .input { @apply block w-full rounded-xl border-line bg-ink/70 px-4 py-3 text-slate-100 placeholder:text-slate-700 focus:border-electric focus:ring-electric/20; }
+  .btn-primary { @apply inline-flex items-center gap-2 rounded-xl bg-electric px-4 py-2.5 text-sm font-bold text-ink transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-electric/30; }
+  .btn-secondary { @apply inline-flex items-center gap-2 rounded-xl border border-line bg-panel px-4 py-2.5 text-sm font-semibold text-slate-300 transition hover:border-slate-500 hover:text-white; }
+  .btn-accept { @apply inline-flex items-center justify-center gap-2 rounded-xl border border-mint/30 bg-mint/10 px-4 py-3 text-sm font-bold text-mint transition hover:bg-mint hover:text-ink; }
+  .btn-reject { @apply inline-flex items-center justify-center gap-2 rounded-xl border border-red-400/30 bg-red-400/10 px-4 py-3 text-sm font-bold text-red-300 transition hover:bg-red-400 hover:text-ink; }
+  .icon-button { @apply grid h-10 w-10 place-items-center rounded-xl border border-line text-slate-400 transition hover:border-slate-500 hover:text-white; }
+  .chip { @apply rounded-full border border-line px-3 py-1.5 text-xs font-medium text-slate-400 transition hover:border-electric/50 hover:text-electric; }
+  .filter { @apply rounded-full border border-line px-3 py-1.5 text-[11px] font-bold tracking-wider text-slate-500 transition hover:text-slate-200; }
+  .filter-active { @apply rounded-full border border-electric/40 bg-electric/10 px-3 py-1.5 text-[11px] font-bold tracking-wider text-electric; }
+  .badge-open { @apply rounded-full border border-electric/30 bg-electric/10 px-2.5 py-1 text-[10px] font-bold tracking-widest text-electric; }
+  .badge-passed { @apply rounded-full border border-mint/30 bg-mint/10 px-2.5 py-1 text-[10px] font-bold tracking-widest text-mint; }
+  .badge-rejected { @apply rounded-full border border-red-400/30 bg-red-400/10 px-2.5 py-1 text-[10px] font-bold tracking-widest text-red-300; }
+  .badge-paid { @apply rounded-full border border-violet/30 bg-violet/10 px-2.5 py-1 text-[10px] font-bold tracking-widest text-violet; }
+  .text-gradient { @apply bg-gradient-to-r from-electric via-white to-violet bg-clip-text text-transparent; }
+}
+

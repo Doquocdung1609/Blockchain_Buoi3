@@ -1,0 +1,13 @@
+.env
+.env.local
+.env.*.local
+node_modules/
+blockchain/node_modules/
+frontend/node_modules/
+blockchain/cache/
+blockchain/artifacts/
+blockchain/coverage/
+frontend/build/
+tmp/
+*.log
+
